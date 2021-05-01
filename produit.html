@@ -7,46 +7,50 @@
 
         <script src="https://kit.fontawesome.com/57ebff3fcc.js" crossorigin="anonymous"></script>
 
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="orinoco/frontend/css/style.css"/>
         
         <title>Orinoco</title>
     </head>
     <body>
-        <header>
-            <ul>
+        <header class="header">
+            <ul class="header__list">
                 <li>
-                    <h1><img src="orinoco/frontend/images/banniere.png"></h1>
+                    <h1><img class="header__banner" src="orinoco/frontend/images/banniere.png"></h1>
                 </li>
                 <li>
-                    <a>Récents</a>
+                    <a href="index.html#nouveau">Récents</a>
                 </li>
                 <li>
-                    <a>Tous nos produits</a>
+                    <a href="index.html#nounours">Tous nos produits</a>
                 </li>
                 <li>
-                    <a>Tendance</a>
+                    <a href="index.html#tendance">Tendance</a>
                 </li>
                 <li>
-                    <a class="fas fa-shopping-cart"></a>
+                    <a href="panier.html" class="header__icon fas fa-shopping-cart"></a>
                 </li>
             </ul>
         </header>
 
-        <main>
-            <section>
-                <article>
+        <main class="main">
+            <section class="main__product">
+                <article class="main__article">
                     <figure>
-                        <img src="orinoco/frontend/images/teddy_1.jpg">
+                        <img class="main__image" src="orinoco/frontend/images/teddy_1.jpg">
                     </figure>
-                    <figcaption>
+                    <figcaption class="main__figcaption">
                         <h2>Orinounours 4.</h2>
-                        <p>1299€</p>
+                        <p class="main__price">Prix: 1299€</p>
                     </figcaption>
                 </article>
             </section>
-            <section>
+
+            <section class="main__option">
                 <h3>Quantité</h3>
-                <select>
+                <select class="main__select">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -59,40 +63,46 @@
                 </select>
 
                 <h3>Couleurs</h3>
-                <select>
+                <select class="main__select">
                     <option>Tan</option>
                     <option>Chocolate</option>
                     <option>Black</option>
                     <option>White</option>
                 </select>
-                <button>Ajouter au panier</button>
+                <a class="main__button" href="panier.html">Ajouter au panier</a>
             </section>
         </main>
 
-        <footer>
-            <h2><img src="orinoco/frontend/images/banniere.png"></h2>
+        <footer class="footer">
+            <h2 class="footer__title"><img class="footer__banner" src="orinoco/frontend/images/banniere.png"></h2>
 
-            <h3>À propos</h3>
+            <div class="footer__container">
+                <h3 class="footer__subtitle">À propos</h3>
 
-            <ul>
-                <li><a href="#0">Fonctionnement du site</a></li>
-                <li><a href="#0">Conditions générales de vente</a></li>
-                <li><a href="#0">Données et confidentialité</a></li>
-                <li><a href="#0">Mentions légales</a></li>
-            </ul>
+                <ul>
+                    <li class="footer__bullet"><a href="#0">Fonctionnement du site</a></li>
+                    <li class="footer__bullet"><a href="#0">Conditions générales de vente</a></li>
+                    <li class="footer__bullet"><a href="#0">Données et confidentialité</a></li>
+                    <li class="footer__bullet"><a href="#0">Mentions légales</a></li>
+                </ul>
+            </div>
 
-            <h3>Nos produits</h3>
+            <div class="footer__container">
+                <h3 class="footer__subtitle">Nos produits</h3>
 
-            <ul>
-                <li><a href="#0">Fonctionnement du site</a></li>
-            </ul>
-
-            <h3>Assistance</h3>
+                <ul>
+                    <li class="footer__bullet"><a href="#0">Charte qualité</a></li>
+                </ul>
+            </div>
             
-            <ul>
-                <li><a href="#0">Centre d'aide</a></li>
-                <li><a href="#0">Nous contacter</a></li>
-            </ul>
+            <div class="footer__container">
+                <h3 class="footer__subtitle">Assistance</h3>
+                        
+                <ul>
+                    <li class="footer__bullet"><a href="#0">Centre d'aide</a></li>
+                    <li class="footer__bullet"><a href="#0">Nous contacter</a></li>
+                </ul>
+            </div>
         </footer>
     </body>
 </html>

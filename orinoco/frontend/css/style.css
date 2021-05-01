@@ -257,4 +257,66 @@ h3 {
   z-index: -1;
 }
 
+.main {
+  display: flex;
+}
+.main__product {
+  width: 70%;
+}
+.main__article {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.main__image {
+  height: 366px;
+  width: 314px;
+  object-fit: cover;
+}
+.main__figcaption {
+  text-align: center;
+}
+.main__price {
+  font-size: 2rem;
+  font-weight: 400;
+}
+.main__option {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 30%;
+  background-color: #f2f2f2;
+}
+.main__select {
+  width: max-content;
+}
+.main__button {
+  width: max-content;
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  background: linear-gradient(to top left, #8F5BFE 10%, #E68A08 90%);
+  border-radius: 3rem;
+  position: relative;
+  z-index: 1;
+}
+.main__button:hover::after {
+  opacity: 1;
+}
+.main__button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top left, #b28efe 10%, #f8a229 90%);
+  border-radius: 3rem;
+  opacity: 0;
+  z-index: -1;
+}
+
 /*# sourceMappingURL=style.css.map */
