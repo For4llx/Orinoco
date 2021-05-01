@@ -7,159 +7,167 @@
 
         <script src="https://kit.fontawesome.com/57ebff3fcc.js" crossorigin="anonymous"></script>
 
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="orinoco/frontend/css/style.css"/>
 
         <title>Orinoco</title>
     </head>
     <body>
-        <header>
-            <ul>
+        <header class="header">
+            <ul class="header__list">
                 <li>
-                    <h1><img src="orinoco/frontend/images/banniere.png"></h1>
+                    <h1><img class="header__banner" src="orinoco/frontend/images/banniere.png"></h1>
                 </li>
                 <li>
-                    <a>Récents</a>
+                    <a href="#nouveau">Récents</a>
                 </li>
                 <li>
-                    <a>Tous nos produits</a>
+                    <a href="#nounours">Tous nos produits</a>
                 </li>
                 <li>
-                    <a>Tendance</a>
+                    <a href="#tendance">Tendance</a>
                 </li>
                 <li>
-                    <a class="fas fa-shopping-cart"></a>
+                    <a href="panier.html" class="header__icon fas fa-shopping-cart"></a>
                 </li>
             </ul>
         </header>
         <main>
-            <section>
-                <h2>Découvrez les meilleurs nounours avec Orinoco.</h2>
-                <img src="orinoco/frontend/images/teddy_5.jpg">
+            <section class="presentation">
+                <h2 class="presentation__title">Découvrez les meilleurs nounours avec Orinoco.</h2>
+                <img class="presentation__image" src="orinoco/frontend/images/teddy_5.jpg">
             </section>
 
-            <section id="nouveau">
+            <section class="new" id="nouveau">
                 <h2>Nos récents nounours.</h2>
                 <ul>
                     <li>
-                        <article>
+                        <article class="new__article">
                             <figure>
-                                <img src="orinoco/frontend/images/teddy_1.jpg">
+                                <img class="new__image" src="orinoco/frontend/images/teddy_1.jpg">
                             </figure>
-                            <figcaption>
+                            <figcaption class="new__figcaption">
                                 <h3>Orinounours 4.</h3>
-                                <p>Une révolution.</p>
-                                <p>1299€</p>
+                                <p class="new__description">Une révolution.</p>
+                                <p class="new__price">1299€</p>
                             </figcaption>
-                            <button>Voir le produit</button>
+                            <a class="new__button" href="produit.html">Voir le produit</a>
                         </article>
                     </li>
                 </ul>
             </section>
 
-            <section id="tendance">
+            <section class="tendance" id="tendance">
                 <h2>Nos nounours en tendance.</h2>
                 <ul>
                     <li>
-                        <article>
+                        <article class="tendance__article">
                             <figure>
-                                <img src="orinoco/frontend/images/teddy_4.jpg">
+                                <img class="tendance__image" src="orinoco/frontend/images/teddy_4.jpg">
                             </figure>
-                            <figcaption>
+                            <figcaption class="tendance__figcaption">
                                 <h3>Orinounours 3.</h3>
-                                <p>Le plus beau.</p>
-                                <p>899€</p>
+                                <p class="tendance__description">Le plus beau.</p>
+                                <p class="tendance__price">899€</p>
                             </figcaption>
-                            <button>Voir le produit</button>
+                            <a class="tendance__button" href="produit.html">Voir le produit</a>
                         </article>
                     </li>
                 </ul>
             </section>
 
-            <section id="nounours">
+            <section class="teddybear" id="nounours">
                 <h2>Toute notre gammes de nounours.</h2>
-                <ul>
-                    <li>
-                        <article>
-                            <p>Nouveau !</p>
+                <ul class="teddybear__list">
+                    <li class="teddybear__bullet">
+                        <article class="teddybear__article">
+                            <p class="teddybear__tag">Nouveau !</p>
                             <figure>
-                                <img src="orinoco/frontend/images/teddy_1.jpg">
+                                <img class="teddybear__image" src="orinoco/frontend/images/teddy_1.jpg">
                             </figure>
-                            <figcaption>
+                            <figcaption class="teddybear__figcaption">
                                 <h3>Orinounours4.</h3>
-                                <p>Un révolution.</p>
-                                <p>1299€</p>
+                                <p class="teddybear__description">Un révolution.</p>
+                                <p class="teddybear__price">1299€</p>
                             </figcaption>
-                            <button>Voir le produit</button>
+                            <a class="teddybear__button" href="produit.html">Voir le produit</a>
                         </article>
                     </li>
-                    <li>
-                        <article>
-                            <p>Tendance !</p>
+                    <li class="teddybear__bullet">
+                        <article class="teddybear__article">
+                            <p class="teddybear__tag">Tendance !</p>
                             <figure>
-                                <img src="orinoco/frontend/images/teddy_4.jpg">
+                                <img class="teddybear__image" src="orinoco/frontend/images/teddy_4.jpg">
                             </figure>
-                            <figcaption>
+                            <figcaption class="teddybear__figcaption">
                                 <h3>Orinounours 3.</h3>
-                                <p>Le plus beau.</p>
-                                <p>899€</p>
+                                <p class="teddybear__description">Le plus beau.</p>
+                                <p class="teddybear__price">899€</p>
                             </figcaption>
-                            <button>Voir le produit</button>
+                            <a class="teddybear__button" href="produit.html">Voir le produit</a>
                         </article>
                     </li>
-                    <li>
-                        <article>
+                    <li class="teddybear__bullet">
+                        <article class="teddybear__article">
                             <figure>
-                                <img src="orinoco/frontend/images/teddy_2.jpg">
+                                <img class="teddybear__image" src="orinoco/frontend/images/teddy_2.jpg">
                             </figure>
-                            <figcaption>
+                            <figcaption class="teddybear__figcaption">
                                 <h3>Orinounours 2.</h3>
-                                <p>Un prix compétitif.</p>
-                                <p>399€</p>
+                                <p class="teddybear__description">Un prix compétitif.</p>
+                                <p class="teddybear__price">399€</p>
                             </figcaption>
-                            <button>Voir le produit</button>
+                            <a class="teddybear__button" href="produit.html">Voir le produit</a>
                         </article>
                     </li>
-                    <li>
-                        <article>
+                    <li class="teddybear__bullet">
+                        <article class="teddybear__article">
                             <figure>
-                                <img src="orinoco/frontend/images/teddy_3.jpg">
+                                <img class="teddybear__image" src="orinoco/frontend/images/teddy_3.jpg">
                             </figure>
-                            <figcaption>
+                            <figcaption class="teddybear__figcaption">
                                 <h3>Orinounours 1.</h3>
-                                <p>Les inséparables.</p>
-                                <p>599€</p>
+                                <p class="teddybear__description">Les inséparables.</p>
+                                <p class="teddybear__price">599€</p>
                             </figcaption>
-                            <button>Voir le produit</button>
+                            <a class="teddybear__button" href="produit.html">Voir le produit</a>
                         </article>
                     </li>
                 </ul>
             </section>
-            
         </main>
-        <footer>
-            <h2><img src="orinoco/frontend/images/banniere.png"></h2>
+        <footer class="footer">
+            <h2 class="footer__title"><img class="footer__banner" src="orinoco/frontend/images/banniere.png"></h2>
 
-            <h3>À propos</h3>
+            <div class="footer__container">
+                <h3 class="footer__subtitle">À propos</h3>
 
-            <ul>
-                <li><a href="#0">Fonctionnement du site</a></li>
-                <li><a href="#0">Conditions générales de vente</a></li>
-                <li><a href="#0">Données et confidentialité</a></li>
-                <li><a href="#0">Mentions légales</a></li>
-            </ul>
+                <ul>
+                    <li class="footer__bullet"><a href="#0">Fonctionnement du site</a></li>
+                    <li class="footer__bullet"><a href="#0">Conditions générales de vente</a></li>
+                    <li class="footer__bullet"><a href="#0">Données et confidentialité</a></li>
+                    <li class="footer__bullet"><a href="#0">Mentions légales</a></li>
+                </ul>
+            </div>
 
-            <h3>Nos produits</h3>
+            <div class="footer__container">
+                <h3 class="footer__subtitle">Nos produits</h3>
 
-            <ul>
-                <li><a href="#0">Fonctionnement du site</a></li>
-            </ul>
-
-            <h3>Assistance</h3>
+                <ul>
+                    <li class="footer__bullet"><a href="#0">Charte qualité</a></li>
+                </ul>
+            </div>
             
-            <ul>
-                <li><a href="#0">Centre d'aide</a></li>
-                <li><a href="#0">Nous contacter</a></li>
-            </ul>
+            <div class="footer__container">
+                <h3 class="footer__subtitle">Assistance</h3>
+                        
+                <ul>
+                    <li class="footer__bullet"><a href="#0">Centre d'aide</a></li>
+                    <li class="footer__bullet"><a href="#0">Nous contacter</a></li>
+                </ul>
+            </div>
         </footer>
     </body>
 </html>

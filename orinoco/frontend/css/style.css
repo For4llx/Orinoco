@@ -13,4 +13,248 @@ li {
   list-style: none;
 }
 
+h2 {
+  font-size: 3.25rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.header {
+  background-color: #F3E9F1;
+}
+.header__banner {
+  height: 44px;
+}
+.header__list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header__icon {
+  font-size: 1.5rem;
+}
+
+.footer {
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background-color: #F3E9F1;
+}
+.footer__title {
+  width: 100%;
+}
+.footer__banner {
+  height: 88px;
+}
+.footer__container {
+  text-align: left;
+}
+.footer__subtitle {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+.footer__bullet {
+  margin-bottom: 0.5rem;
+}
+
+.presentation {
+  position: relative;
+}
+.presentation__title {
+  position: absolute;
+  bottom: 65%;
+  left: 20%;
+  right: 20%;
+  text-align: center;
+}
+.presentation__image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+.new {
+  padding: 2rem;
+}
+.new__article {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.new__image {
+  height: 366px;
+  width: 314px;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+.new__figcaption {
+  text-align: center;
+}
+.new__description {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 300;
+}
+.new__price {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.new__button {
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  background: linear-gradient(to top left, #8F5BFE 10%, #E68A08 90%);
+  border-radius: 3rem;
+  position: relative;
+  z-index: 1;
+}
+.new__button:hover::after {
+  opacity: 1;
+}
+.new__button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top left, #b28efe 10%, #f8a229 90%);
+  border-radius: 3rem;
+  opacity: 0;
+  z-index: -1;
+}
+
+.tendance {
+  padding: 2rem;
+  background-color: #F3E9F1;
+}
+.tendance__article {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tendance__image {
+  height: 366px;
+  width: 314px;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+.tendance__figcaption {
+  text-align: center;
+}
+.tendance__description {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 300;
+}
+.tendance__price {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.tendance__button {
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  background: linear-gradient(to top left, #8F5BFE 10%, #E68A08 90%);
+  border-radius: 3rem;
+  position: relative;
+  z-index: 1;
+}
+.tendance__button:hover::after {
+  opacity: 1;
+}
+.tendance__button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top left, #b28efe 10%, #f8a229 90%);
+  border-radius: 3rem;
+  opacity: 0;
+  z-index: -1;
+}
+
+.teddybear {
+  padding: 2rem;
+}
+.teddybear__tag {
+  padding: 1rem;
+  color: #E68A08;
+  font-weight: bold;
+}
+.teddybear__list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.teddybear__bullet {
+  width: 41%;
+}
+.teddybear__article {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.teddybear__image {
+  height: 366px;
+  width: 314px;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+.teddybear__figcaption {
+  text-align: center;
+}
+.teddybear__description {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 300;
+}
+.teddybear__price {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.teddybear__button {
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  background: linear-gradient(to top left, #8F5BFE 10%, #E68A08 90%);
+  border-radius: 3rem;
+  position: relative;
+  z-index: 1;
+}
+.teddybear__button:hover::after {
+  opacity: 1;
+}
+.teddybear__button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top left, #b28efe 10%, #f8a229 90%);
+  border-radius: 3rem;
+  opacity: 0;
+  z-index: -1;
+}
+
 /*# sourceMappingURL=style.css.map */

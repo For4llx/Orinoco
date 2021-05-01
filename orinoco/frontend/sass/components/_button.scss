@@ -1,0 +1,32 @@
+@mixin button
+{
+    padding: 1rem;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    background: linear-gradient(to top left, $secondary-color 10%, $tertiary-color 90%);
+    border-radius: 3rem;
+    position: relative;
+    z-index: 1;
+
+    &:hover
+    {
+        &::after
+        {
+            opacity: 1;
+        }
+    }
+    &::after
+    {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;  
+        left: 0;
+        background: linear-gradient(to top left, lighten($secondary-color, 10%) 10%, lighten($tertiary-color, 10%) 90%);
+        border-radius: 3rem;
+        opacity: 0;
+        z-index: -1;
+    }
+}
