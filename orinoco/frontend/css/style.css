@@ -403,4 +403,130 @@ button {
   color: #8F5BFE;
 }
 
+.main {
+  display: flex;
+}
+.main__title {
+  margin-bottom: 1rem;
+}
+.main__payment {
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+.main__section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f2f2;
+  width: 100%;
+}
+.main__form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.main__form--payment {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.main__input {
+  width: 45%;
+}
+.main__input--large {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.main__container {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.main__button {
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  background: linear-gradient(to top left, #8F5BFE 10%, #E68A08 90%);
+  border-radius: 3rem;
+  position: relative;
+  z-index: 1;
+}
+.main__button:hover::after {
+  opacity: 1;
+}
+.main__button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top left, #b28efe 10%, #f8a229 90%);
+  border-radius: 3rem;
+  opacity: 0;
+  z-index: -1;
+}
+.main__summary {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+.main__image {
+  height: 269px;
+  width: 239px;
+  object-fit: cover;
+}
+.main__list {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  border-top: solid black 1px;
+  border-bottom: solid black 1px;
+}
+.main__article {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.main__figcaption {
+  width: 100%;
+  text-align: center;
+}
+.main__price {
+  font-size: 1.875rem;
+}
+.main__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.main__delete {
+  color: #8F5BFE;
+}
+.main__select {
+  width: 45%;
+}
+.main__anchor-up {
+  display: none;
+}
+.main__total {
+  font-size: 3.125rem;
+  font-weight: bold;
+}
+
 /*# sourceMappingURL=style.css.map */

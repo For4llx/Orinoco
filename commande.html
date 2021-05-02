@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
         <script src="https://kit.fontawesome.com/57ebff3fcc.js" crossorigin="anonymous"></script>
 
@@ -13,128 +16,160 @@
     </head>
 
     <body>
-        <header>
-        <ul>
-            <li>
-                <h1><img src="orinoco/frontend/images/banniere.png"></h1>
-            </li>
-            <li>
-                <a>Récents</a>
-            </li>
-            <li>
-                <a>Tous nos produits</a>
-            </li>
-            <li>
-                <a>Tendance</a>
-            </li>
-            <li>
-                <a class="fas fa-shopping-cart"></a>
-            </li>
-        </ul>
-    </header>
+        <header class="header">
+            <ul class="header__list">
+                <li>
+                    <h1><img class="header__banner" src="orinoco/frontend/images/banniere.png"></h1>
+                </li>
+                <li>
+                    <a href="index.html#nouveau">Récents</a>
+                </li>
+                <li>
+                    <a href="index.html#nounours">Tous nos produits</a>
+                </li>
+                <li>
+                    <a href="index.html#tendance">Tendance</a>
+                </li>
+                <li>
+                    <a href="panier.html" class="header__icon fas fa-shopping-cart"></a>
+                </li>
+            </ul>
+        </header>
 
-    <main>
-        <section>
-            <h3>Coordonnées</h3>
-            <form>
-                <input type="email" placeholder="Adresse e-mail">
-            </form>
-            <h3>Adresse de livraison</h3>
-            <form>
-                <input type="text" placeholder="Prénom">
-                <input type="text" placeholder="Nom">
-                <input placeholder="Ligne d'adresse 1">
-                <input placeholder="Ligne d'adresse 2">
-                <input placeholder="Code postale" maxlength="5">
-                <input placeholder="Ville">
-                <select>
-                    <option value="">Pays</option>
-                    <option value="">France</option>
-                </select>
-            </form>
+    <main class="main">
+        <section class="main__payment">
+            <h2>Paiement</h2>
+
+            <section class="main__section">
+                <h3 class="main__title">Coordonnées</h3>
+
+                <form>
+                    <input type="email" placeholder="Adresse e-mail">
+                </form>
+
+                <h3 class="main__title">Adresse de livraison</h3>
+
+                <form class="main__form">
+                    <div class="main__container">
+                        <input class="main__input" type="text" placeholder="Prénom">
+                        <input class="main__input" type="text" placeholder="Nom">
+                    </div>
+
+                    <input class="main__input--large" placeholder="Ligne d'adresse 1">
+                    <input class="main__input--large" placeholder="Ligne d'adresse 2">
+
+                    <div class="main__container">
+                        <input class="main__input" placeholder="Code postale" maxlength="5">
+                        <input class="main__input" placeholder="Ville">
+                    </div>
+                    <select>
+                        <option value="">Pays</option>
+                        <option value="">France</option>
+                    </select>
+                </form>
+            </section>
+
+            <section class="main__section">
+                <h3 class="main__title">Méthode de paiement</h3>
+
+                <form class="main__form--payment">
+                    <input class="main__input--large" placeholder="Numero de carte" maxlength="16">
+                    <div class="main__container">
+                        <select class="main__select">
+                            <option value="">Mois</option>
+                            <option value="">Janvier</option>
+                            <option value="">Février</option>
+                            <option value="">Mars</option>
+                            <option value="">Avril</option>
+                            <option value="">Mai</option>
+                            <option value="">Juin</option>
+                            <option value="">Juillet</option>
+                            <option value="">Août</option>
+                            <option value="">Septembre</option>
+                            <option value="">Octobre</option>
+                            <option value="">Novembre</option>
+                            <option value="">Décembre</option>
+                        </select>
+
+                        <select class="main__select">
+                            <option value="">Année</option>
+                            <option value="">2024</option>
+                            <option value="">2023</option>
+                            <option value="">2022</option>
+                            <option value="">2021</option>
+                        </select>
+                    </div>
+                    <input class="main__input" placeholder="Code de sécurité" maxlength="3">
+                </form>
+            </section>
+
+            <a class="main__button" href="confirmation.html">Confirmation de commande</a>
+            
         </section>
-        <section>
-            <h3>Méthode de paiement</h3>
-            <form>
-                <input placeholder="Numero de carte">
 
-                <select>
-                    <option value="">Mois</option>
-                    <option value="">Janvier</option>
-                    <option value="">Février</option>
-                    <option value="">Mars</option>
-                    <option value="">Avril</option>
-                    <option value="">Mai</option>
-                    <option value="">Juin</option>
-                    <option value="">Juillet</option>
-                    <option value="">Août</option>
-                    <option value="">Septembre</option>
-                    <option value="">Octobre</option>
-                    <option value="">Novembre</option>
-                    <option value="">Décembre</option>
-                </select>
-
-                <select>
-                    <option value="">Année</option>
-                    <option value="">2024</option>
-                    <option value="">2023</option>
-                    <option value="">2022</option>
-                    <option value="">2021</option>
-                </select>
-
-                <input placeholder="Code de sécurité" maxlength="3">
-            </form>
-
-            <button>Confirmation de commande</button>
-        </section>
-
-        <section>
+        <section class="main__summary">
             <h2>Récapitulatif de commande</h2>
 
-            <article>
-                <figure>
-                    <img src="orinoco/frontend/images/teddy_1.jpg">
-                </figure>
-                <figcaption>
-                    <h3>Orinounours 4.</h3>
-                    <p>1299€</p>
-                    <h3>Quantité</h3>
-                    <p>1</p>
-                    <h3>Couleurs</h3>
-                    <p>Brun</p>
-                    <button>Supprimer</button>
-                </figcaption>
-            </article>
+            <ul class="main__list">
+                <li>
+                    <article class="main__article">
+                        <figure>
+                            <img class="main__image" src="orinoco/frontend/images/teddy_1.jpg">
+                        </figure>
+                        <figcaption class="main__figcaption">
+                            <h3>Orinounours 4.</h3>
+                            <p class="main__price">1299€</p>
+                            <div class="main__container">
+                                <div>
+                                    <h3>Quantité</h3>
+                                    <p>1</p>
+                                </div>
+                                <div>
+                                    <h3>Couleurs</h3>
+                                    <p>Brun</p>
+                                </div>
+                            </div>
+                            <button class="main__delete">Supprimer</button>
+                        </figcaption>
+                    </article>
+                </li>
+            </ul>
 
-            <p>Total à payer 0€</p>
-            <p>retourner au paiement</p>
+            <p class="main__total">Total à payer 0€</p>
+            <p class="main__anchor-up">retourner au paiement</p>
         </section>
     </main>
 
-    <footer>
-        <h2><img src="orinoco/frontend/images/banniere.png"></h2>
+    <footer class="footer">
+        <h2 class="footer__title"><img class="footer__banner" src="orinoco/frontend/images/banniere.png"></h2>
 
-        <h3>À propos</h3>
+        <div class="footer__container">
+            <h3 class="footer__subtitle">À propos</h3>
 
-        <ul>
-            <li><a href="#0">Fonctionnement du site</a></li>
-            <li><a href="#0">Conditions générales de vente</a></li>
-            <li><a href="#0">Données et confidentialité</a></li>
-            <li><a href="#0">Mentions légales</a></li>
-        </ul>
+            <ul>
+                <li class="footer__bullet"><a href="#0">Fonctionnement du site</a></li>
+                <li class="footer__bullet"><a href="#0">Conditions générales de vente</a></li>
+                <li class="footer__bullet"><a href="#0">Données et confidentialité</a></li>
+                <li class="footer__bullet"><a href="#0">Mentions légales</a></li>
+            </ul>
+        </div>
 
-        <h3>Nos produits</h3>
+        <div class="footer__container">
+            <h3 class="footer__subtitle">Nos produits</h3>
 
-        <ul>
-            <li><a href="#0">Fonctionnement du site</a></li>
-        </ul>
-
-        <h3>Assistance</h3>
+            <ul>
+                <li class="footer__bullet"><a href="#0">Charte qualité</a></li>
+            </ul>
+        </div>
         
-        <ul>
-            <li><a href="#0">Centre d'aide</a></li>
-            <li><a href="#0">Nous contacter</a></li>
-        </ul>
+        <div class="footer__container">
+            <h3 class="footer__subtitle">Assistance</h3>
+                    
+            <ul>
+                <li class="footer__bullet"><a href="#0">Centre d'aide</a></li>
+                <li class="footer__bullet"><a href="#0">Nous contacter</a></li>
+            </ul>
+        </div>
     </footer>
     </body>
 </html>
