@@ -23,6 +23,11 @@ h3 {
   text-align: center;
 }
 
+button {
+  border: none;
+  background: transparent;
+}
+
 .header {
   background-color: #F3E9F1;
 }
@@ -317,6 +322,85 @@ h3 {
   border-radius: 3rem;
   opacity: 0;
   z-index: -1;
+}
+
+.order {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.order__shipping-paragraph {
+  margin: 1rem;
+  font-weight: bold;
+  font-size: 1.875rem;
+}
+.order__button {
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  background: linear-gradient(to top left, #8F5BFE 10%, #E68A08 90%);
+  border-radius: 3rem;
+  position: relative;
+  z-index: 1;
+}
+.order__button:hover::after {
+  opacity: 1;
+}
+.order__button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top left, #b28efe 10%, #f8a229 90%);
+  border-radius: 3rem;
+  opacity: 0;
+  z-index: -1;
+}
+.order__list {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  border-top: solid black 1px;
+  border-bottom: solid black 1px;
+}
+.order__article {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.order__image {
+  height: 228px;
+  width: 196px;
+  object-fit: cover;
+}
+.order__figcaption {
+  width: 100%;
+  text-align: center;
+}
+.order__price {
+  font-size: 1.875rem;
+}
+.order__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.order__delete {
+  color: #8F5BFE;
+}
+.order__more {
+  margin: 1rem;
+  color: #8F5BFE;
 }
 
 /*# sourceMappingURL=style.css.map */
