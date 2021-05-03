@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
     &__shipping-paragraph
     {
@@ -44,7 +45,6 @@
     &__figcaption
     {
         width: 100%;
-        text-align: center;
     }
     &__price
     {
