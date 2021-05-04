@@ -1,0 +1,16 @@
+{
+  "name": "romeonobime_5_21042021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./orinoco/frontend/sass/main.scss:.orinoco//frontend/css/style.css",
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0"
+  }
+}

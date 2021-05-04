@@ -3,6 +3,11 @@
     position: relative;
     text-align: center;
 
+    @include tablet
+    {
+        height: 1024px;
+    }
+
     &__acknowledgement
     {
         position: absolute;
