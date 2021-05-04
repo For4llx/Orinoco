@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./orinoco/frontend/sass/main.scss:.orinoco//frontend/css/style.css",
+    "sass": "sass --watch ./orinoco/frontend/sass/main.scss:./orinoco/frontend/css/style.css",
     "build": "webpack"
   },
   "author": "",
