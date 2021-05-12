@@ -9,24 +9,68 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/app.js":
+/*!********************!*\
+  !*** ./src/app.js ***!
+  \********************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("__webpack_require__(/*! ./index.js */ \"./src/index.js\");\n\n__webpack_require__(/*! ./produit.js */ \"./src/produit.js\");\n\n//# sourceURL=webpack://romeonobime_5_21042021/./src/app.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ (() => {
 
-eval("fetch(\"http://localhost:3000/api/teddies\", {mode: 'no-cors'})\n    .then\n    (\n        function(response)\n        {\n            console.log(\"pas d'erreur\");\n        }\n    )\n    .catch\n    (\n        function(response)\n        {\n            console.log(\"erreur parce que voila\");\n        }\n    )\n\n//# sourceURL=webpack://romeonobime_5_21042021/./src/index.js?");
+eval("if (window.location.pathname.indexOf(\"index.html\") != -1) {\n  fetch(\"http://localhost:3000/api/teddies\").then(function (response) {\n    if (response.ok) {\n      return response.json();\n    }\n  }).then(function (data)\n  /* On créé les éléments HTML des produits autant de fois qu'il en existe */\n  {\n    var teddybearList = document.querySelector(\".teddybear__list\");\n\n    for (i = 0; i < data.length; i++) {\n      teddybearList.innerHTML += \"<li><article><figure><img></figure><figcaption><h3></h3><p></p><p></p></figcaption><a></a></article></li>\";\n    }\n\n    setTimeout(function ()\n    /* On ajoute aux éléments leur textcontent et leur image */\n    {\n      for (i = 0; i < data.length; i++) {\n        var teddybearImage = document.querySelectorAll(\".teddybear__list img\");\n        var teddybearName = document.querySelectorAll(\".teddybear__list h3\");\n        var teddybearPrice = document.querySelectorAll(\".teddybear__list p:nth-child(3)\");\n        var teddybearButton = document.querySelectorAll(\".teddybear__list a\");\n        teddybearImage[i].setAttribute(\"src\", data[i].imageUrl);\n        teddybearName[i].textContent = data[i].name;\n        teddybearPrice[i].textContent = \"Prix:\" + data[i].price + \"€\";\n        teddybearButton[i].textContent = \"Voir le produit\";\n      }\n    }, 2000);\n    setTimeout(function ()\n    /* On ajoute aux éléments leur class */\n    {\n      for (i = 0; i < data.length; i++) {\n        var teddybearBullet = document.querySelectorAll(\".teddybear__list li\");\n        var teddybearArticle = document.querySelectorAll(\".teddybear__list article\");\n        var teddybearImage = document.querySelectorAll(\".teddybear__list img\");\n        var teddybearFigcaption = document.querySelectorAll(\".teddybear__list figcaption\");\n        var teddybearName = document.querySelectorAll(\".teddybear__list h3\");\n        var teddybearDescription = document.querySelectorAll(\".teddybear__list p:nth-child(2)\");\n        var teddybearPrice = document.querySelectorAll(\".teddybear__list p:nth-child(3)\");\n        var teddybearButton = document.querySelectorAll(\".teddybear__list a\");\n        teddybearBullet[i].setAttribute(\"class\", \"teddybear__bullet\");\n        teddybearArticle[i].setAttribute(\"class\", \"teddybear__article\");\n        teddybearImage[i].setAttribute(\"class\", \"teddybear__image\");\n        teddybearFigcaption[i].setAttribute(\"class\", \"teddybear__figcaption\");\n        teddybearName[i].setAttribute(\"class\", \"teddybear__name\");\n        teddybearDescription[i].setAttribute(\"class\", \"teddybear__description\");\n        teddybearPrice[i].setAttribute(\"class\", \"teddybear__price\");\n        teddybearButton[i].setAttribute(\"class\", \"teddybear__button\");\n        teddybearButton[i].setAttribute(\"href\", \"produit.html?teddybearId=\" + data[i]._id);\n      }\n    }, 2000);\n  });\n}\n\n//# sourceURL=webpack://romeonobime_5_21042021/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/produit.js":
+/*!************************!*\
+  !*** ./src/produit.js ***!
+  \************************/
+/***/ (() => {
+
+eval("if (window.location.pathname.indexOf(\"produit.html\") != -1) {\n  var params = new URLSearchParams(window.location.search);\n  var teddybearId = params.get(\"teddybearId\");\n  console.log(teddybearId);\n  fetch(\"http://localhost:3000/api/teddies\").then(function (response) {\n    if (response.ok) {\n      return response.json();\n    }\n  }).then(function (data) {\n    /* On créé les éléments HTML du produit */\n    var teddybearProduct = document.querySelector(\".main__product\");\n    teddybearProduct.innerHTML = \"<article><figure><img></figure><figcaption><h2></h2><p></p><p></p></figcaption></article>\";\n    setTimeout(function () {\n      for (i = 0; i < data.length; i++) {\n        if (data[i]._id === teddybearId) {\n          var teddybear = data[i];\n          /* On récupère les données du teddybear selectionné */\n\n          /* On selectionne nos élements */\n\n          var teddybearArticle = document.querySelector(\".main__product article\");\n          var teddybearImage = document.querySelector(\".main__product img\");\n          var teddybearFigcaption = document.querySelector(\".main__product figcaption\");\n          var teddybearName = document.querySelector(\".main__product h2\");\n          var teddybearPrice = document.querySelector(\".main__product p:nth-child(2)\");\n          var teddybearDescription = document.querySelector(\".main__product p:nth-child(3)\");\n          /* On ajoute aux éléments leur textcontent et leur image */\n\n          teddybearImage.setAttribute(\"src\", teddybear.imageUrl);\n          teddybearName.textContent = teddybear.name;\n          ;\n          teddybearPrice.textContent = \"Prix:\" + teddybear.price + \"€\";\n          teddybearDescription.textContent = teddybear.description;\n          /* On ajoute aux éléments leur class */\n\n          teddybearArticle.setAttribute(\"class\", \"main__article\");\n          teddybearImage.setAttribute(\"class\", \"main__image\");\n          teddybearFigcaption.setAttribute(\"class\", \"main__figcaption\");\n          teddybearPrice.setAttribute(\"class\", \"main__price\");\n          /* On ajoute autant d'options qu'il y a de couleurs disponible */\n\n          var teddybearSelectColors = document.querySelector(\".main__colors\");\n\n          for (y = 0; i < teddybear.colors.length; y++) {\n            teddybearSelectColors.innerHTML += \"<option></option>\";\n          }\n\n          var teddybearOptionColors = document.querySelectorAll(\".main__colors option\");\n          /* On ajoute le nom des couleurs dans les options */\n\n          for (y = 0; i < teddybear.colors.length; y++) {\n            teddybearOptionColors.textContent = teddybear.colors[y];\n          }\n        }\n      }\n    }, 2000);\n  });\n}\n\n//# sourceURL=webpack://romeonobime_5_21042021/./src/produit.js?");
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/index.js"]();
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/app.js");
 /******/ 	
 /******/ })()
 ;
