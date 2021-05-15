@@ -2,7 +2,7 @@ if (window.location.pathname.indexOf("produit.html") != -1)
 {
     const params = new URLSearchParams(window.location.search);
     const teddybearId = params.get("teddybearId");
-    console.log(teddybearId);
+    teddybear = "";
 
     fetch("http://localhost:3000/api/teddies")
     .then
@@ -33,7 +33,7 @@ if (window.location.pathname.indexOf("produit.html") != -1)
                     {
                         if (data[i]._id === teddybearId)
                         {
-                            const teddybear = data[i]; /* On récupère les données du teddybear selectionné */
+                            teddybear = data[i]; /* On récupère les données du teddybear selectionné */
 
                             /* On selectionne nos élements */
                             let teddybearArticle = document.querySelector(".main__product article");
@@ -54,24 +54,66 @@ if (window.location.pathname.indexOf("produit.html") != -1)
                             teddybearImage.setAttribute("class", "main__image");
                             teddybearFigcaption.setAttribute("class", "main__figcaption");
                             teddybearPrice.setAttribute("class", "main__price");
-
-                            /* On ajoute autant d'options qu'il y a de couleurs disponible */
-                            let teddybearSelectColors = document.querySelector(".main__colors");
-
-                            for( y = 0; i < teddybear.colors.length; y++)
-                            {
-                                teddybearSelectColors.innerHTML += "<option></option>";
-                            }
-
-                            let teddybearOptionColors = document.querySelectorAll(".main__colors option");
-                            /* On ajoute le nom des couleurs dans les options */
-                            for( y = 0; i < teddybear.colors.length; y++)
-                            {
-                                teddybearOptionColors.textContent = teddybear.colors[y];
-                            }
                         }
                     }
                 }, 2000
+            );
+            setTimeout
+            (
+                function() /* On ajoute toute les couleurs disponibles */
+                {
+                    let selectSelectColors = document.querySelector(".main__colors");
+
+                    for( i = 0; i < teddybear.colors.length; i++)
+                    {
+                        selectSelectColors.innerHTML += "<option>" + teddybear.colors[i] + "</option>";
+                    }
+                }, 3000
+            );
+            setTimeout
+            (
+                function() /* On ajoute toute les couleurs disponibles */
+                {
+                    let selectOptionColors = document.querySelectorAll(".main__colors option");
+
+                    for( i = 0; i < teddybear.colors.length; i++)
+                    {
+                        selectOptionColors[i].setAttribute("value", teddybear.colors[i]);
+                    }
+                }, 3500
+            );
+            
+            let selectSelectQuantity = document.querySelector(".main__quantity");
+
+            selectSelectQuantity.addEventListener
+            (
+                "change", function(event)
+                {
+                    quantitySelected = event.target.value + "";
+                }
+            );
+
+            let selectSelectColors = document.querySelector(".main__colors");
+
+            selectSelectColors.addEventListener
+            (
+                "change", function(event)
+                {
+                    colorSelected = event.target.value + "";
+                }
+            );
+            
+            /* Au clique du boutton principal, on ajoute le nounours avec ses options à localstorage */
+            const selectMainButton = document.querySelector(".main__button");
+
+            selectMainButton.addEventListener
+            (
+                "click", function()
+                {
+                    teddybearObject = Object.values(teddybear);
+                    teddybearObject.push({"quantity": quantitySelected, "color_selected": colorSelected});
+                    window.localStorage.setItem(teddybear.name , JSON.stringify(teddybearObject));
+                }
             );
         }
     );
