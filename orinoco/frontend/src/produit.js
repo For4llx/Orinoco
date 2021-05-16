@@ -102,20 +102,36 @@ if (window.location.pathname.indexOf("produit.html") != -1)
                     colorSelected = event.target.value + "";
                 }
             );
-            
-            /* Au clique du boutton principal, on ajoute le nounours avec ses options à localstorage */
+
             const selectMainButton = document.querySelector(".main__button");
 
             selectMainButton.addEventListener
             (
                 "click", function()
                 {
-                    teddybearObject = Object.values(teddybear);
-                    teddybearObject.push({"quantity": quantitySelected, "color_selected": colorSelected});
-                    window.localStorage.setItem(teddybear.name , JSON.stringify(teddybearObject));
+                    if (typeof cart === "undefined")
+                    {
+                        cart = [];
+
+                        setTimeout
+                        (
+                            function()
+                            {
+                                cart.push(teddybear);
+                                cartStringified = JSON.stringify(cart);
+                                window.localStorage.setItem("Cart", cartStringified);
+                            }, 2000
+                        );
+                    }
+                    else
+                    {
+                        cart.push(teddybear);
+                        cartStringified = JSON.stringify(cart);
+                        window.localStorage.setItem("Cart", cartStringified);
+                    }
                 }
             );
+            
         }
     );
 }
-
