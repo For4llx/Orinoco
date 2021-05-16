@@ -117,6 +117,8 @@ if (window.location.pathname.indexOf("produit.html") != -1)
                         (
                             function()
                             {
+                                teddybear.quantity = quantitySelected;
+                                teddybear.colors = colorSelected;
                                 cart.push(teddybear);
                                 cartStringified = JSON.stringify(cart);
                                 window.localStorage.setItem("Cart", cartStringified);
@@ -125,6 +127,8 @@ if (window.location.pathname.indexOf("produit.html") != -1)
                     }
                     else
                     {
+                        teddybear.quantity = quantitySelected;
+                        teddybear.colors = colorSelected;
                         cart.push(teddybear);
                         cartStringified = JSON.stringify(cart);
                         window.localStorage.setItem("Cart", cartStringified);
