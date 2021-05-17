@@ -3,6 +3,21 @@ if (window.location.pathname.indexOf("produit.html") != -1)
     const params = new URLSearchParams(window.location.search);
     const teddybearId = params.get("teddybearId");
     teddybear = "";
+    cart = [];
+
+    class Product
+    {
+        constructor(_id, colors, description, imageUrl, name,  price, quantity)
+        {
+            this._id = _id;
+            this.colors = colors;
+            this.description = description;
+            this.imageUrl = imageUrl;
+            this.name = name;
+            this.price = price;
+            this.quantity = quantity;
+        }
+    }
 
     fetch("http://localhost:3000/api/teddies")
     .then
@@ -82,7 +97,8 @@ if (window.location.pathname.indexOf("produit.html") != -1)
                     }
                 }, 3500
             );
-            
+
+            /* On sélectionne la quantité */
             let selectSelectQuantity = document.querySelector(".main__quantity");
 
             selectSelectQuantity.addEventListener
@@ -93,6 +109,7 @@ if (window.location.pathname.indexOf("produit.html") != -1)
                 }
             );
 
+            /* On sélectionne la couleur */
             let selectSelectColors = document.querySelector(".main__colors");
 
             selectSelectColors.addEventListener
@@ -102,6 +119,7 @@ if (window.location.pathname.indexOf("produit.html") != -1)
                     colorSelected = event.target.value + "";
                 }
             );
+            
 
             const selectMainButton = document.querySelector(".main__button");
 
@@ -109,33 +127,35 @@ if (window.location.pathname.indexOf("produit.html") != -1)
             (
                 "click", function()
                 {
-                    if (typeof cart === "undefined")
+                    if (localStorage.length == 0)
                     {
-                        cart = [];
+                        teddybear = new Product(teddybear._id, colorSelected, teddybear.description, teddybear.imageUrl, teddybear.name, teddybear.price, quantitySelected);
+                        cart.push(teddybear);
+                        cartStringified = JSON.stringify(cart);
+                        window.localStorage.setItem("cart", cartStringified);
+                    }
+                    else if (localStorage.cart.indexOf(teddybear._id) == -1)
+                    {
+                        teddybear = new Product(teddybear._id, colorSelected, teddybear.description, teddybear.imageUrl, teddybear.name, teddybear.price, quantitySelected);
+                        cart.push(teddybear);
 
-                        setTimeout
-                        (
-                            function()
-                            {
-                                teddybear.quantity = quantitySelected;
-                                teddybear.colors = colorSelected;
-                                cart.push(teddybear);
-                                cartStringified = JSON.stringify(cart);
-                                window.localStorage.setItem("Cart", cartStringified);
-                            }, 2000
-                        );
+                        stringStorageData = window.localStorage.getItem("cart");
+                        arrayStorageData = JSON.parse(stringStorageData);
+                        cart = cart.concat(arrayStorageData);
+                        cartStringified = JSON.stringify(cart);
+                        window.localStorage.setItem("cart", cartStringified);
+                        teddybear = new Product(teddybear._id, colorSelected, teddybear.description, teddybear.imageUrl, teddybear.name, teddybear.price, quantitySelected);
+                        cart.push(teddybear);
                     }
                     else
                     {
-                        teddybear.quantity = quantitySelected;
-                        teddybear.colors = colorSelected;
+                        teddybear = new Product(teddybear._id, colorSelected, teddybear.description, teddybear.imageUrl, teddybear.name, teddybear.price, quantitySelected);
                         cart.push(teddybear);
                         cartStringified = JSON.stringify(cart);
-                        window.localStorage.setItem("Cart", cartStringified);
+                        window.localStorage.setItem("cart", cartStringified);
                     }
                 }
             );
-            
         }
     );
 }
