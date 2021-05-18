@@ -144,8 +144,6 @@ if (window.location.pathname.indexOf("produit.html") != -1)
                         cart = cart.concat(arrayStorageData);
                         cartStringified = JSON.stringify(cart);
                         window.localStorage.setItem("cart", cartStringified);
-                        teddybear = new Product(teddybear._id, colorSelected, teddybear.description, teddybear.imageUrl, teddybear.name, teddybear.price, quantitySelected);
-                        cart.push(teddybear);
                     }
                     else
                     {
