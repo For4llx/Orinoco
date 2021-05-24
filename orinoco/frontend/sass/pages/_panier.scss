@@ -17,15 +17,21 @@
     {
         @include button;
     }
+    &__bullet
+    {
+        width: 50%;
+    }
     &__list
     {
         margin-top: 1rem;
         margin-bottom: 1rem;
         display: flex;
-        justify-content: space-evenly;
         width: 90%;
         border-top: solid black 1px;
         border-bottom: solid black 1px;
+        overflow-y: scroll;
+        height: 30rem;
+        flex-wrap: wrap;
     }
     &__article
     {
@@ -42,10 +48,6 @@
         width: 196px;
         object-fit: cover;
     }
-    &__figcaption
-    {
-        width: 100%;
-    }
     &__price
     {
         font-size: 1.875rem;
@@ -55,6 +57,10 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
+        &--article
+        {
+            width: 100%;
+        }
     }
     &__delete
     {

@@ -28,8 +28,10 @@
         width: 314px;
         object-fit: cover;
     }
-    &__figcaption
+    &__container
     {
+        display: flex;
+        flex-direction: column;
         text-align: center;
     }
     &__price

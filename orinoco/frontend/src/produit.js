@@ -36,7 +36,7 @@ if (window.location.pathname.indexOf("produit.html") != -1)
             /* On créé les éléments HTML du produit */
             let teddybearProduct = document.querySelector(".main__product");
 
-            teddybearProduct.innerHTML = "<article><figure><img></figure><figcaption><h2></h2><p></p><p></p></figcaption></article>";
+            teddybearProduct.innerHTML = "<article><figure><img></figure><div><h2></h2><p></p><p></p></div></article>";
             
             for(i = 0; i < data.length; i++)
             {
@@ -47,7 +47,7 @@ if (window.location.pathname.indexOf("produit.html") != -1)
                     /* On selectionne nos élements */
                     let teddybearArticle = document.querySelector(".main__product article");
                     let teddybearImage = document.querySelector(".main__product img");
-                    let teddybearFigcaption = document.querySelector(".main__product figcaption");
+                    let teddybearContainer = document.querySelector(".main__product div");
                     let teddybearName = document.querySelector(".main__product h2");
                     let teddybearPrice = document.querySelector(".main__product p:nth-child(2)");
                     let teddybearDescription = document.querySelector(".main__product p:nth-child(3)");
@@ -61,7 +61,7 @@ if (window.location.pathname.indexOf("produit.html") != -1)
                     /* On ajoute aux éléments leur class */
                     teddybearArticle.setAttribute("class", "main__article");
                     teddybearImage.setAttribute("class", "main__image");
-                    teddybearFigcaption.setAttribute("class", "main__figcaption");
+                    teddybearContainer.setAttribute("class", "main__container");
                     teddybearPrice.setAttribute("class", "main__price");
                 }
             }
