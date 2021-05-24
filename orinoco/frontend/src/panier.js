@@ -9,6 +9,18 @@ if (window.location.pathname.indexOf("panier.html") != -1)
         {
             selectOrderList.innerHTML += "<li><article><figure><img></figure><figcaption><h3></h3><p></p><div><h3>Quantité</h3><p></p></div><div><h3>Couleurs</h3><p></p></div><button>Supprimer</button></figcaption></article></li>";
         }
+
+        let overallPrice = 0;
+        localStorageParsed = JSON.parse(window.localStorage.cart);
+
+        for(i = 0; i < localStorageParsed.length; i++)
+        {
+            overallPrice +=  localStorageParsed[i].price * localStorageParsed[i].quantity;
+        }
+
+        const selectAmount = document.querySelector(".order > h2:nth-child(1)");
+
+        selectAmount.textContent = "Le montant de votre panier est de " + overallPrice + "€";
         setTimeout
         (
             function ()

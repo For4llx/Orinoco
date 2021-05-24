@@ -1,3 +1,6 @@
-require("./index.js");
-require("./produit.js");
-require("./panier.js");
+require("./library");
+require("./index");
+require("./produit");
+require("./panier");
+require("./commande");
+require("./confirmation");

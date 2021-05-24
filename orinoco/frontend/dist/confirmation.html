@@ -8,8 +8,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="orinoco/frontend/css/style.css"/>
-        <script src="./app.bundle.js"></script>
+        <link rel="stylesheet" href="css/style.css"/>
+        <script src="./app.bundle.js" defer></script>
 
         <title>Orinoco</title>
         
@@ -17,11 +17,12 @@
     <body>
         <div class="container">
             <div class="container__acknowledgement">
-                <h1>Merci pour votre commande !</h1>
+                <h1 id="acknowledgments"></h1>
+                <p id="orderId"></p>
                 <p class="container__paragraph">Vous recevrez votre commande dans les prochains jours ouvrés dans votre boîte au lettre.</p>
                 <a class="container__button" href="index.html">Retournez à la page d'accueil</a>
             </div>
-            <img class="container__image" src="orinoco/frontend/images/teddy_5.jpg">
+            <img class="container__image" src="images/teddy_5.jpg">
         </div>
     </body>
 </html>
