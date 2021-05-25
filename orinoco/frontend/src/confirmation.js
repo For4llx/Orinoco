@@ -15,4 +15,7 @@ if (window.location.pathname.indexOf("confirmation.html") != -1)
 
     selectAcknowledgments.textContent = "Merci " + localStorageOrderParsed.contact.firstName + " pour votre commande d'un montant de " + overallPrice + " €.";
     selectOrderId.textContent = "Votre identifiant de commande est le " + localStorageOrderParsed.orderId;
+
+    delete window.localStorage.cart;
+    delete window.localStorage.order;
 }

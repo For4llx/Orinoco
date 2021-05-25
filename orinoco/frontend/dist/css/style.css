@@ -477,6 +477,11 @@ button {
 .order__bullet {
   width: 50%;
 }
+@media screen and (max-width: 480px) {
+  .order__bullet {
+    width: 100%;
+  }
+}
 .order__list {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -532,6 +537,9 @@ button {
 .main__title {
   margin-bottom: 1rem;
 }
+.main__bullet {
+  width: 100%;
+}
 .main__payment {
   margin: 1rem;
   padding: 1rem;
@@ -558,20 +566,12 @@ button {
 }
 .main__form {
   display: flex;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-}
-.main__form--payment {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 .main__input {
-  width: 45%;
-}
-.main__input--large {
   margin-bottom: 1rem;
-  width: 100%;
 }
 .main__container {
   margin-bottom: 1rem;
@@ -633,6 +633,9 @@ button {
   width: 90%;
   border-top: solid black 1px;
   border-bottom: solid black 1px;
+  flex-wrap: wrap;
+  height: 30rem;
+  overflow-y: scroll;
 }
 .main__article {
   margin-top: 1rem;
@@ -640,7 +643,6 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
 }
 .main__figcaption {
   width: 100%;
