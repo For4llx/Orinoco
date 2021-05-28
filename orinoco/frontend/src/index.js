@@ -21,7 +21,20 @@ if (window.location.pathname.indexOf("index.html") != -1)
 
             for( i = 0; i < data.length; i++)
             {
-                teddybearList.innerHTML += "<li><article><figure><img></figure><div><h3></h3><p></p><p></p></div><a></a></article></li>";
+                teddybearList.innerHTML +=/*html*/`
+                <li>
+                    <article>
+                        <figure>
+                            <img>
+                        </figure>
+                        <div>
+                            <h3></h3>
+                            <p></p>
+                            <p></p>
+                        </div>
+                        <a></a>
+                    </article>
+                </li>`;
             }
 
             /* On ajoute aux éléments leur textcontent et leur image */

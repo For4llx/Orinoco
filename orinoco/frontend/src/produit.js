@@ -66,7 +66,6 @@ if (window.location.pathname.indexOf("produit.html") != -1)
                 }
             }
 
-
             /* On ajoute toute les couleurs disponibles */
 
             let selectSelectColors = document.querySelector(".main__colors");
@@ -84,7 +83,6 @@ if (window.location.pathname.indexOf("produit.html") != -1)
             {
                 selectOptionColors[i].setAttribute("value", teddybear.colors[i]);
             }
-
 
             /* On sélectionne la quantité */
             let selectSelectQuantity = document.querySelector(".main__quantity");

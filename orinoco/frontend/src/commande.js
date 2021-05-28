@@ -17,7 +17,27 @@ if (window.location.pathname.indexOf("commande.html") != -1)
     
     for( i = 0; i < localStorageCartParsed.length; i++)
     {
-        selectMainList.innerHTML += "<li><article><figure><img></figure><div><h3></h3><p></p><div><h3>Quantité</h3><p></p></div><div><h3>Couleurs</h3><p></p></div><button>Supprimer</button></div></article></li>";
+        selectMainList.innerHTML +=/*html*/` 
+        <li>
+            <article>
+                <figure>
+                    <img>
+                </figure>
+                <div>
+                    <h3></h3>
+                    <p></p>
+                    <div>
+                        <h3>Quantité</h3>
+                        <p></p>
+                    </div>
+                    <div>
+                        <h3>Couleurs</h3>
+                        <p></p>
+                    </div>
+                    <button>Supprimer</button>
+                </div>
+            </article>
+        </li>`;
     }
 
     for( i = 0; i < localStorageCartParsed.length; i++)
@@ -33,7 +53,6 @@ if (window.location.pathname.indexOf("commande.html") != -1)
         teddybearPrice[i].textContent = "Prix:" + localStorageCartParsed[i].price + "€";
         teddybearQuantity[i].textContent = localStorageCartParsed[i].quantity;
         teddybearColors[i].textContent = localStorageCartParsed[i].colors;
-        
     }
     /* On ajoute aux éléments leur textcontent et leur image */
     for( i = 0; i < localStorageCartParsed.length; i++)
@@ -78,59 +97,70 @@ if (window.location.pathname.indexOf("commande.html") != -1)
             const city = document.getElementById("town").value;
             const email = document.getElementById("email").value;
 
-            /* On créé un objet qui contient toute les valeurs du formulaire */
 
-            let contact = {
-                "firstName": firstName,
-                "lastName": lastName,
-                "address": address,
-                "city" : city,
-                "email": email
-            };
+            /* On valide les données envoyées avec regex */
+            const firstNameValidation = /[a-zA-Züäëïöûâêîôàèéç]/.test(firstName);
+            const lastNameValidation = /[a-zA-Züäëïöûâêîôàèéç]/.test(lastName);
+            const addressValidation = /[a-zA-Züäëïöûâêîôàèéç]/.test(address);
+            const cityValidation = /[a-zA-Züäëïöûâêîôàèéç]/.test(city);
+            const emailValidation = /^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$/.test(email);
 
-            /*Récupère l'id de tout les produits et les mets dans un tableau products */
-
-            let products = [];
-            for(i=0; i < localStorageCartParsed.length; i++)
+            if (emailValidation & cityValidation & addressValidation & lastNameValidation & firstNameValidation)
             {
-                products.push(localStorageCartParsed[i]._id);
-            }
+                /* On créé un objet qui contient toute les valeurs du formulaire */
 
-            clientContactInformation = new order(contact, products);
+                let contact = {
+                    "firstName": firstName,
+                    "lastName": lastName,
+                    "address": address,
+                    "city" : city,
+                    "email": email
+                };
 
-            /*on envoie les données au serveur*/
-            fetch
-            (
-                "http://localhost:3000/api/teddies/order",
+                /*Récupère l'id de tout les produits et les mets dans un tableau products */
+
+                let products = [];
+                for(i=0; i < localStorageCartParsed.length; i++)
                 {
-                    method: "POST",
-                    headers:
-                    {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(clientContactInformation)
+                    products.push(localStorageCartParsed[i]._id);
                 }
-            )
-            .then
-            (
-                function(response)
-                {
-                    if (response.ok)
+
+                clientContactInformation = new order(contact, products);
+
+                /*on envoie les données au serveur*/
+                fetch
+                (
+                    "http://localhost:3000/api/teddies/order",
                     {
-                        return response.json();
+                        method: "POST",
+                        headers:
+                        {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(clientContactInformation)
                     }
-                }
-            )
-            .then
-            (
-                function(order)
-                {
-                    console.log(order);
-                    order = JSON.stringify(order);
-                    window.localStorage.setItem("order", order);
-                    window.location.href = "confirmation.html";
-                }
-            )
+                )
+                .then
+                (
+                    function(response)
+                    {
+                        if (response.ok)
+                        {
+                            return response.json();
+                        }
+                    }
+                )
+                .then
+                (
+                    function(order)
+                    {
+                        console.log(order);
+                        order = JSON.stringify(order);
+                        window.localStorage.setItem("order", order);
+                        window.location.href = "confirmation.html";
+                    }
+                )
+            }
         }
     );
 }

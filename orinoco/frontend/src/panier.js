@@ -7,7 +7,27 @@ if (window.location.pathname.indexOf("panier.html") != -1)
         
         for( i = 0; i < cart.length; i++)
         {
-            selectOrderList.innerHTML += "<li><article><figure><img></figure><div><h3></h3><p></p><div><h3>Quantité</h3><p></p></div><div><h3>Couleurs</h3><p></p></div><button>Supprimer</button></div></article></li>";
+            selectOrderList.innerHTML += /*html*/`
+            <li>
+                <article>
+                    <figure>
+                        <img>
+                    </figure>
+                    <div>
+                        <h3></h3>
+                        <p></p>
+                        <div>
+                            <h3>Quantité</h3>
+                            <p></p>
+                        </div>
+                        <div>
+                            <h3>Couleurs</h3>
+                            <p></p>
+                        </div>
+                        <button>Supprimer</button>
+                    </div>
+                </article>
+            </li>`;
         }
 
         let overallPrice = 0;
