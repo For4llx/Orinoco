@@ -36,7 +36,17 @@ if (window.location.pathname.indexOf("produit.html") != -1)
             /* On créé les éléments HTML du produit */
             let teddybearProduct = document.querySelector(".main__product");
 
-            teddybearProduct.innerHTML = "<article><figure><img></figure><div><h2></h2><p></p><p></p></div></article>";
+            teddybearProduct.innerHTML = /*html*/`
+            <article>
+                <figure>
+                    <img>
+                </figure>
+                <div>
+                    <h2></h2>
+                    <p></p>
+                    <p></p>
+                </div>
+            </article>`;
             
             for(i = 0; i < data.length; i++)
             {
@@ -66,7 +76,7 @@ if (window.location.pathname.indexOf("produit.html") != -1)
                 }
             }
 
-            /* On ajoute toute les couleurs disponibles */
+            /* On ajoute toute les options de couleurs disponibles */
 
             let selectSelectColors = document.querySelector(".main__colors");
 
@@ -94,10 +104,23 @@ if (window.location.pathname.indexOf("produit.html") != -1)
                 "click",
                 function()
                 {
+                    /* On récupère les valeurs des options sélectionnés */
                     const quantitySelected = selectSelectQuantity.value;
                     const colorSelected = selectSelectColors.value;
-                    teddybear = new Product(teddybear._id, colorSelected, teddybear.description, teddybear.imageUrl, teddybear.name, teddybear.price, quantitySelected);
 
+                    /* On créer un produit teddybear avec les options sélectionnées */
+                    teddybear = new Product
+                    (
+                        teddybear._id,
+                        colorSelected, 
+                        teddybear.description, 
+                        teddybear.imageUrl, 
+                        teddybear.name, 
+                        teddybear.price, 
+                        quantitySelected
+                    );
+
+                    /* On sauvegarde dans le nouvelle objet dans le localstorage */
                     const cart = window.getCart();
                     cart.push(teddybear);
                     window.saveCart(cart);

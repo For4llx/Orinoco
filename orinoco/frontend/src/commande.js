@@ -73,7 +73,7 @@ if (window.location.pathname.indexOf("commande.html") != -1)
 
     for(i = 0; i < localStorageCartParsed.length; i++)
     {
-        overallPrice +=  localStorageCartParsed[i].price;
+        overallPrice +=  localStorageCartParsed[i].price * localStorageCartParsed[i].quantity;
     }
 
     const selectAmount = document.querySelector(".main__total");
