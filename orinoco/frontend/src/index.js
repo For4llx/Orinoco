@@ -76,5 +76,12 @@ if (window.location.pathname.indexOf("index.html") != -1)
                 teddybearButton[i].setAttribute("href", "produit.html?teddybearId=" + data[i]._id);
             }
         }
-    );
+    )
+    .catch
+    (
+        function(error)
+        {
+            console.log(error);
+        }
+    )
 }

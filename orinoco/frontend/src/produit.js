@@ -127,5 +127,12 @@ if (window.location.pathname.indexOf("produit.html") != -1)
                 }
             );
         }
-    );
+    )
+    .catch
+    (
+        function(error)
+        {
+            console.log(error);
+        }
+    )
 }
